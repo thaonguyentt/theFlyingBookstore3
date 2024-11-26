@@ -1,0 +1,7 @@
+services:
+  playwright_testrunner:
+    image: mcr.microsoft.com/playwright:v1.46.0-jammy
+    volumes:
+      - ./:/test_src/
+    working_dir: /test_src
+    command: /bin/bash -c "PLAYWRIGHT_HTML_OPEN=never cd /test_src && npx playwright test && chown -R $USER test-results playwright-report"
