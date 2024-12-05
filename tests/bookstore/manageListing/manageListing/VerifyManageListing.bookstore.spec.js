@@ -13,10 +13,11 @@ test('verify tab order sale order', async ({ page }) => {
   await page.goto(url);
 
   await page.waitForTimeout(3000);
-   // click icon manage persional information 
+   // click icon manage page
   await page.getByLabel('show 4 new mails').nth(2).click();
 
   await page.waitForTimeout(3000);
+
 
   //verify header quản lý bài đăng của tôi
   await expect(page.getByRole('heading', { name: 'Quản lý bài đăng của tôi' })).toBeVisible();
