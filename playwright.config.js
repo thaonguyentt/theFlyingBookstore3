@@ -26,7 +26,8 @@ module.exports = defineConfig({
   /* Retry on CI only */
   retries: process.env.CI ? 2 : 0,
   /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
+  // workers: process.env.CI ? 1 : undefined,
+  workers: 1,
   /*set timeout */
   timeout: Number.parseInt(process.env.TEST_TIMEOUT, 10) * timeInMin,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
@@ -60,7 +61,7 @@ module.exports = defineConfig({
   /* Configure projects for major browsers */
   projects: [
 
-    { name: 'setupBookstore', testMatch: /auth\.bookstore\.setup\.js/ },
+    { name: 'setupBookstore', testMatch: /auth\.bookstore\.setup\.js/},
 
     {
       name: 'bookstore', // tên project
@@ -70,13 +71,16 @@ module.exports = defineConfig({
         //config save authentication
         storageState: 'playwright/.auth/user.json',
         // headless: false,
+        // viewport: { width: 1280, height: 720 },
         launchOptions: {
           // Chạy chế độ có giao diện
           headless: false,
-          args: ["--start-maximized","--disable-extensions", "--disable-plugins"],
+          // args: ["--start-maximized","--disable-extensions", "--disable-plugins"],
           // slowMo: 50,
-          // downloadsPath: "./Files/Downloads",
+          // downloadsPath: "./Files/Downloads", eeh gemini AI nó nói dầy nè
+
         },
+        video: 'on',
       },
       dependencies: ['setupBookstore'], // là chỗ này để xác định file auth
     },
@@ -97,7 +101,7 @@ module.exports = defineConfig({
         //   // args: ["--start-maximized", "--disable-extensions", "--disable-plugins"],
         //   // slowMo: 50,
         //   // downloadsPath: "./Files/Downloads",
-        viewport: null
+        // viewport: { width: 1280, height: 720 },
         },
       // },
       // dependencies: ['setupHcmut'],
