@@ -80,7 +80,7 @@ module.exports = defineConfig({
           // downloadsPath: "./Files/Downloads", eeh gemini AI nó nói dầy nè
 
         },
-        video: 'off',
+        video: 'on',
       },
       dependencies: ['setupBookstore'], // là chỗ này để xác định file auth
     },
