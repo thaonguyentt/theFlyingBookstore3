@@ -6,7 +6,7 @@ dotenv.config();
 
 const url = process.env.URL_Home;
 
-test('verify dropdown "bộ lọc"', async ({ page }) => {
+test('verify danh sách listing', async ({ page }) => {
   if (!url) {
     throw new Error('URL environment variable is not defined');
   }

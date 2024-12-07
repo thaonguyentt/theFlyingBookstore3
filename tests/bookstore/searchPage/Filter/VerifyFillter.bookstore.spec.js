@@ -22,9 +22,6 @@ test('verify presence of filter', async ({ page }) => {
   // verify name of tab xoá bộ lọc "Lọc theo"
   await expect(page.getByRole('main')).toContainText('Lọc theo');
 
-  //button "Xoá bộ lọc" can click
-  // await page.getByRole('button', { name: 'Xóa bộ lọc' }).click();
-  // button is active
   await expect(page.getByRole('button', { name: 'Xóa bộ lọc' })).toBeEnabled();
 
   //verify "Danh mục" list of genre 

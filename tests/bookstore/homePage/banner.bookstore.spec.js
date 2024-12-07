@@ -32,13 +32,6 @@ test('verify banner', async ({ page }) => {
   await expect(page.getByRole('main')).toContainText('Xem chi tiết →');
 
 
- 
-  // await expect(page.getByRole('button', { name: 'Picture of the author The' })).toBeVisible();
-  // await expect(page.locator('#book-button')).toBeVisible();
-  // await expect(page.getByPlaceholder('Tìm sách…')).toBeVisible();
-  // await expect(page.locator('#search')).toBeVisible();
-
-
 
 
 

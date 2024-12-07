@@ -24,6 +24,9 @@ test('verify tab order sale order', async ({ page }) => {
 
   await page.waitForTimeout(3000);
 
+   //scroll đến bài đăng
+   await page.getByRole('button', { name: 'Bài đăng', exact: true }).scrollIntoViewIfNeeded();
+
   //verify header bài đăng
   await expect(page.getByRole('button', { name: 'Bài đăng', exact: true })).toBeVisible();
 

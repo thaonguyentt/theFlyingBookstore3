@@ -22,7 +22,6 @@ test('verify check out page for leaseOrder', async ({ page }) => {
  await page.locator('#search').click();
 
   //Click the first listing
-  // await page.getByRole('link', { name: 'Cover of Ice Ice Thuê: 1.600' }).click();
   await page.locator('(//*[@class="grid grid-cols-4 gap-4"]//img)[3]').click();
 
 

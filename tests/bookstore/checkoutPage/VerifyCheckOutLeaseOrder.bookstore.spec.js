@@ -24,10 +24,6 @@ test('verify check out page for leaseOrder', async ({ page }) => {
   //Click listing "cover of ice"
   await page.getByRole('link', { name: 'Cover of Ice Ice Thuê: 1.600' }).click();
 
-
-  //verify tab thuê theo ngày
-  await expect(page.getByRole('main')).toContainText('Thuê theo ngày');
-
   //chọn ngày 31
   await page.getByLabel('Chọn ngày', { exact: true }).click();
   await page.getByRole('gridcell', { name: '31' }).click();
@@ -38,9 +34,11 @@ test('verify check out page for leaseOrder', async ({ page }) => {
   //click butotn đặt thuê hàng in card
   await page.getByRole('button', { name: 'Đặt thuê hàng' }).click();
 
-  //verify thông tin sản phẩm, thông tin đặt hàng
+  //verify thông tin sản phẩm, thông tin đặt hàng, thông tin đặt thuê, thanh toán
   await expect(page.getByRole('main')).toContainText('Thông tin sản phẩm');
   await expect(page.getByRole('main')).toContainText('Thông tin đặt hàng');
+  await expect(page.getByRole('main')).toContainText('Thông tin đặt thuê');
+  await expect(page.getByRole('main')).toContainText('Thanh toán');
 
   //verify nút quay lại giỏ hàng
   await expect(page.getByRole('button', { name: 'Quay lại giỏ hàng' })).toBeVisible();

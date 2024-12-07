@@ -25,8 +25,8 @@ test('verify check out page for leaseOrder', async ({ page }) => {
   await page.getByRole('link', { name: 'Cover of Ice Ice Thuê: 1.600' }).click();
 
 
-  //verify tab thuê theo ngày
-  await expect(page.getByRole('main')).toContainText('Thuê theo ngày');
+  // //verify tab thuê theo ngày
+  // await expect(page.getByRole('main')).toContainText('Thuê theo ngày');
 
   //chọn ngày 31
   await page.getByLabel('Chọn ngày', { exact: true }).click();

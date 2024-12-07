@@ -24,6 +24,9 @@ test('verify tab order sale order', async ({ page }) => {
 
   await page.waitForTimeout(3000);
 
+  //scroll đến copy
+  await page.getByRole('button', { name: 'Tài liệu', exact: true }).scrollIntoViewIfNeeded();
+
   //verify tab tạo copy
   await expect(page.getByRole('button', { name: 'Tài liệu', exact: true })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Tài liệu', exact: true })).toBeEnabled();

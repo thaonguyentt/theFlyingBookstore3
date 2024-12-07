@@ -31,15 +31,15 @@ test('verify detail tab in detail listing page', async ({ page }) => {
   const detail_elem = await page.getByRole('tab', { name: 'Chi tiết' });
   await detail_elem.scrollIntoViewIfNeeded();
 
-  // //button book preview button is enabled
-  // await expect(page.getByRole('button', { name: 'Xem trước sách' })).toBeVisible();
-  // await expect(page.getByRole('button', { name: 'Xem trước sách' })).toBeEnabled();
+  //button book preview button is enabled
+  await expect(page.getByRole('button', { name: 'Xem trước sách' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Xem trước sách' })).toBeEnabled();
 
-  // //verify title, authors, publisher, Publication date of book 
-  // await expect(page.getByRole('heading', { name: 'Ice' })).toBeVisible();
-  // await expect(page.getByText('Tác giả')).toBeVisible();
-  // await expect(page.getByText('Nhà xuất bản')).toBeVisible();
-  // await expect(page.locator('p').filter({ hasText: 'Ngày xuất bản' })).toBeVisible();
+  //verify title, authors, publisher, Publication date of book 
+  await expect(page.locator('h1').filter({ hasText: 'Ice' })).toBeVisible();
+  await expect(page.getByText('Tác giả')).toBeVisible();
+  await expect(page.getByText('Nhà xuất bản')).toBeVisible();
+  await expect(page.locator('p').filter({ hasText: 'Ngày xuất bản' })).toBeVisible();
 
 
 

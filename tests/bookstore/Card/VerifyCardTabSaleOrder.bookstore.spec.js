@@ -17,20 +17,14 @@ test('verify tab order sale order', async ({ page }) => {
 
   await page.waitForTimeout(3000);
 
- //set text on search input and click search icon
-//  await page.getByPlaceholder('Tìm sách…').fill('Ice');
+  //set text on search input and click search icon
+  await page.locator('#search').click();
 
- await page.locator('#search').click();
-
- await page.waitForTimeout(5000);
+  await page.waitForTimeout(5000);
 
 
-  //Click listing "cover of ice"
+  //Click listing thứ ba trên danh sách listing
   await page.locator('(//*[@class="grid grid-cols-4 gap-4"]//img)[3]').click();
-
-    // //scroll to a element 
-    // const detail_elem = await page.getByRole('button', { name: 'Mua sách với giá 263.620đ' });
-    // await detail_elem.scrollIntoViewIfNeeded();
 
   //click button mua ngay
   await page.getByRole('button', { name: 'Mua ngay' }).click();

@@ -14,7 +14,7 @@ test('verify carousel', async ({ page }) => {
 
   await page.waitForTimeout(10000);
 
-  const element = await page.getByText('Sách mới ra mắt').scrollIntoViewIfNeeded();
+  await page.getByText('Sách mới ra mắt').scrollIntoViewIfNeeded();
 
   //verify "sách mới ra mắt text"
   await expect(page.getByText('Sách mới ra mắt')).toBeVisible();
